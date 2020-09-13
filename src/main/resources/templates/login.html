@@ -1,22 +1,41 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<headd>
+<head>
     <meta charset="UFT-8">
-    <title>Tweeter - Login</title>
-</headd>
+    <title>Welcome to Tweeter!</title>
+    <link type="text/css"
+          rel="stylesheet"
+          href="styles.css">
+</head>
 
-<form th:action="@{/login-process}" method="post">
-    <label for="inputLogin">Login:</label>
-    <input id="inputLogin" type="text"
-           th:required="required" name="login"/>
+<body>
+<img src="https://toppng.com/uploads/preview/facebook-icon-twitter-icon-social-media-apps-logo-11562942329altfk7xuew.png"
+     alt="Logo" width="230" height="230">
 
-    <label for="inputPassword">Password:</label>
-    <input id="inputPassword" type="password"
-           th:required="required" name="password"/>
+<div class="center">
+    <form th:action="@{/login-process}" method="post">
+        <label for="inputLogin">Login:</label>
+        <input id="inputLogin" type="text"
+               th:required="required" name="login"/>
 
-    <button type="submit">Zaloguj</button>
-</form>
+        <label for="inputPassword">Password:</label>
+        <input id="inputPassword" type="password"
+               th:required="required" name="password"/>
+
+        <button class="button" type="submit">Submit</button>
+    </form>
+</div>
+
+<div>
+    <a href="http://localhost:8080/adduser">Create new account</a>
+</div>
+
+<div>
+    <a href="http://localhost:8080/passwordreset">Forgot password?</a>
+</div>
+
+</body>
 
 
 </html>
