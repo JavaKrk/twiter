@@ -8,7 +8,7 @@ public class TwiterApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(TwiterApplication.class, args);
-		System.out.println("Testing...");
+		System.out.println("Hello");
 	}
 
 }
