@@ -15,5 +15,7 @@ public class UserDto {
     private Date birth_date;
     private String country;
     private String city;
+
+
 }
 

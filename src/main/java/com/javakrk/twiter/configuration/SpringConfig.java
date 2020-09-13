@@ -16,9 +16,8 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
 @Configuration
-@ComponentScan(basePackages = {"configuration"})
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackages = {"repository"})
+@EnableJpaRepositories(basePackages = {"com.javakrk.twiter.repository"})
 public class SpringConfig {
 
     @Bean
@@ -40,7 +39,7 @@ public class SpringConfig {
         LocalContainerEntityManagerFactoryBean localContainerEntityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
         localContainerEntityManagerFactoryBean.setDataSource(getDataSource());
         localContainerEntityManagerFactoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
-        localContainerEntityManagerFactoryBean.setPackagesToScan("model");
+        localContainerEntityManagerFactoryBean.setPackagesToScan("com.javakrk.twiter.model.dao");
         return localContainerEntityManagerFactoryBean;
     }
 
