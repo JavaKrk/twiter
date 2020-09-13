@@ -1,41 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link type="text/css"
+          rel="stylesheet"
+          href="styles.css">
+
+
 </head>
 <body>
-<h1><p></p></h1>
 
-<table width="100%">
-    <tr>
-        <td width="150" valign="top">
-            <div class="card border-dark mb-3" style="max-width: 18rem;">
-            <div class="card-header">User Name </div>
-                <div class="card-body text-dark">
-                <h3 class="card-title">Todayhether</h3>
-                <p class="card-text">Some whether info in your city</p>
-                </div>
+<div class="page">
+    <div class="title">nagłówek strony</div>
+
+    <div class="left">
+        <div><p>User Name</p></div>
+        <p>  <button type="submit" class="button">Log Out</button></p>
+    </div>
+    <div class="middle">
+            <input type="text" size="150px" rows="4" placeholder="What is going on in Your City ?" >
+            <div class="input-group-append">
+                <button type="submit" class="button">Post</button>
+                <button type="submit" class="button_green">Edit</button>
+                <button type="submit" class="button_red">Delete Post</button>
             </div>
-        </td>
+        </div>
+    </div>
+    <div class="middle">Some default post</div>
+    <div class="middle">Some default post</div>
+    <div class="middle">Some default post</div>
+    <div class="middle">Some default post</div>
 
 
-        <td width="500" valign="top">
-            <div class="shadow p-3 mb-5 bg-white rounded" class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="What is going on in Your City ?" aria-label="Recipient's username" aria-describedby="button-addon2">
-                <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button" id="button-addon2">Post</button>
-                </div>
-            </div>
-        </td>
-
-        <td width="150" valign="top" align="right" >
-            <button type="button" class="btn btn-secondary btn-lg">Log Out</button>
-        </td>
-    </tr>
-</table>
+    <div class="bottom">stopka strony</div>
+</div>
 
 </body>
 </html>
