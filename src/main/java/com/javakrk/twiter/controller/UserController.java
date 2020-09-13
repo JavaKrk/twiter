@@ -8,7 +8,6 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class UserController {
 
-
     @GetMapping("/login")
     public String getLoginView() {
         return "login";
@@ -24,5 +23,4 @@ public class UserController {
         return "passwordreset";
     }
 
-
-    }
+}
