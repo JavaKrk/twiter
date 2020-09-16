@@ -7,11 +7,11 @@ import java.util.Date;
 
 @Getter
 @Setter
-public class UserDto {
+public class CommentDto {
 
     private int id;
-    private String email;
-    private Date birthDate;
-    private String country;
-    private String city;
+    private Date date;
+    private String text;
+    private UserDto userDto;
+    private PostDto postDto;
 }

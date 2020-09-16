@@ -1,6 +1,6 @@
 package com.javakrk.twiter.controller;
 
-import com.javakrk.twiter.model.dto.UserSecDto;
+import com.javakrk.twiter.model.dto.UserSecurityDto;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -15,12 +15,11 @@ public class UserController {
 
     @GetMapping("/adduser")
     public ModelAndView getAddUserView() {
-        return new ModelAndView("newuser", "newUser", new UserSecDto());
+        return new ModelAndView("newuser", "newUser", new UserSecurityDto());
     }
 
     @GetMapping("/passwordreset")
     public String passwordResetUserView() {
         return "passwordreset";
     }
-
 }

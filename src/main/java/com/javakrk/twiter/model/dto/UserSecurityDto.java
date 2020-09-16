@@ -5,12 +5,8 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class UserSecDto extends UserDto {
+public class UserSecurityDto extends UserLoggetDto {
 
     private String login;
-    private String email;
     private String password;
-
-
 }
-
