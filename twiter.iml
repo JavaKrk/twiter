@@ -142,5 +142,6 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-beans:5.2.8.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.30" level="project" />
     <orderEntry type="library" name="Maven: org.modelmapper:modelmapper:2.3.8" level="project" />
+    <orderEntry type="library" name="Maven: org.modelmapper.extensions:modelmapper-spring:2.3.8" level="project" />
   </component>
 </module>
