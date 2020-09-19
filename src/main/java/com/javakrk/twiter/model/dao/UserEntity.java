@@ -5,7 +5,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.Date;
 import java.util.Set;
 
 @Entity
@@ -24,7 +23,7 @@ public class UserEntity {
     private String password;
     private String email;
     @Column(name = "birth_date")
-    private Date birthDate;
+    private String birthDate;
 
     @OneToMany(mappedBy = "id")
     private Set<PostEntity> postEntities;

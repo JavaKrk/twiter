@@ -1,5 +1,6 @@
 package com.javakrk.twiter.controller;
 
+import com.javakrk.twiter.model.dto.LocationDto;
 import com.javakrk.twiter.model.dto.UserSecurityDto;
 import com.javakrk.twiter.service.UserService;
 import lombok.AllArgsConstructor;
@@ -13,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 @AllArgsConstructor
 public class UserController {
 
-    private UserService userService;
+    private final UserService userService;
 
     @GetMapping("/start")
     public String getLoginView() {
@@ -26,8 +27,8 @@ public class UserController {
     }
 
     @PostMapping("/adduser")
-    public String addNewUse(@ModelAttribute UserSecurityDto userSecurityDto) {
-        userService.addNewUser(userSecurityDto);
+    public String addNewUse(@ModelAttribute UserSecurityDto userSecurityDto, LocationDto locationDto) {
+        userService.addNewUser(userSecurityDto, locationDto);
         return "redirect:start";
     }
 
@@ -35,5 +36,4 @@ public class UserController {
     public String passwordResetUserView() {
         return "passwordreset";
     }
-
 }

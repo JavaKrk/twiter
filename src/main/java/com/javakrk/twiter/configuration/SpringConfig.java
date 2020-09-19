@@ -2,7 +2,6 @@ package com.javakrk.twiter.configuration;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -28,10 +27,6 @@ public class SpringConfig {
         dataSource.setUrl("jdbc:mysql://remotemysql.com:3306/1GkcyPqRT3?serverTimezone=Europe/Warsaw");
         dataSource.setUsername("1GkcyPqRT3");
         dataSource.setPassword("eMgIHQVhsG");
-//        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-//        dataSource.setUrl("jdbc:mysql://localhost:3306/JpaAndHibernate?serverTimezone=Europe/Warsaw");
-//        dataSource.setUsername("root");
-//        dataSource.setPassword("qwASzx12");
         return dataSource;
     }
 
