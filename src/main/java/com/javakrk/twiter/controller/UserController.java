@@ -28,7 +28,7 @@ public class UserController {
     @PostMapping("/adduser")
     public String addNewUse(@ModelAttribute UserSecurityDto userSecurityDto) {
         userService.addNewUser(userSecurityDto);
-        return "redirect:login";
+        return "redirect:start";
     }
 
     @GetMapping("/passwordreset")
