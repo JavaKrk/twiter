@@ -3,15 +3,14 @@ package com.javakrk.twiter.model.dto;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Date;
+import java.util.Set;
 
 @Getter
 @Setter
-public class UserDto {
+public class LocationDto {
 
     private int id;
-    private String email;
-    private Date birthDate;
     private String country;
     private String city;
+    private Set<UserDto> userDtos;
 }

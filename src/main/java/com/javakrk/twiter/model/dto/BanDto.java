@@ -7,11 +7,9 @@ import java.util.Date;
 
 @Getter
 @Setter
-public class UserDto {
+public class BanDto {
 
     private int id;
-    private String email;
-    private Date birthDate;
-    private String country;
-    private String city;
+    private Date endTime;
+    private UserDto userDto;
 }

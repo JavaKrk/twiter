@@ -1,5 +1,6 @@
 package com.javakrk.twiter.configuration;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -53,5 +54,10 @@ public class SpringConfig {
     @Bean
     public PersistenceExceptionTranslationPostProcessor exceptionTranslationPostProcessor() {
         return new PersistenceExceptionTranslationPostProcessor();
+    }
+
+    @Bean
+    public ModelMapper modelMapper() {
+        return new ModelMapper();
     }
 }
