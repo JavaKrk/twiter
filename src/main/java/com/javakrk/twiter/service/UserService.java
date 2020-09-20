@@ -7,6 +7,7 @@ import com.javakrk.twiter.repository.LocationRepository;
 import com.javakrk.twiter.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.NoSuchElementException;
@@ -15,6 +16,9 @@ import java.util.NoSuchElementException;
 @AllArgsConstructor
 public class UserService {
 
+
+
+    private final PasswordEncoder passwordEncoder;
     private final UserRepository userRepository;
     private final LocationRepository locationRepository;
     private final LocationService locationService;
@@ -36,6 +40,7 @@ public class UserService {
                 userEntity.setRoleEntity(roleService.getRoleEntityByRole("user").get());
             }
 
+            userEntity.setPassword(passwordEncoder.encode(userSecurityDto.getPassword()));
             userRepository.save(userEntity);
         } catch (NoSuchElementException ignored) {
         }
