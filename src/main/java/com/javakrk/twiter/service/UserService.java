@@ -2,7 +2,6 @@ package com.javakrk.twiter.service;
 
 import com.javakrk.twiter.model.dao.LocationEntity;
 import com.javakrk.twiter.model.dao.UserEntity;
-import com.javakrk.twiter.model.dto.LocationDto;
 import com.javakrk.twiter.model.dto.UserSecurityDto;
 import com.javakrk.twiter.repository.LocationRepository;
 import com.javakrk.twiter.repository.UserRepository;
@@ -10,7 +9,7 @@ import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
+import java.util.NoSuchElementException;
 
 @Service
 @AllArgsConstructor
@@ -18,21 +17,28 @@ public class UserService {
 
     private final UserRepository userRepository;
     private final LocationRepository locationRepository;
+    private final LocationService locationService;
+    private final RoleService roleService;
     private final ModelMapper modelMapper;
 
-    public void addNewUser(UserSecurityDto userSecurityDto, LocationDto locationDto) {
+    public void addNewUser(UserSecurityDto userSecurityDto) {
 
-        LocationEntity locationEntity = modelMapper.map(locationDto, LocationEntity.class);
-        locationRepository.save(locationEntity);
+        if (locationService.getLocationEntityByCity(userSecurityDto.getCity()).isEmpty()) {
+            LocationEntity locationEntity = modelMapper.map(userSecurityDto, LocationEntity.class);
+            locationRepository.save(locationEntity);
+        }
 
-        UserEntity userEntity = modelMapper.map(userSecurityDto, UserEntity.class);
-        userRepository.save(userEntity);
+        try {
+            UserEntity userEntity = modelMapper.map(userSecurityDto, UserEntity.class);
+            userEntity.setLocationEntity(locationService.getLocationEntityByCity(userSecurityDto.getCity()).get());
+
+            if (roleService.getRoleEntityByRole("user").isPresent()){
+                userEntity.setRoleEntity(roleService.getRoleEntityByRole("user").get());
+            }
+
+            userRepository.save(userEntity);
+        } catch (NoSuchElementException ignored) {
+        }
     }
 
-    public int getLocationIdByCity(String city) {
-        Optional<LocationEntity> locationByCity = locationRepository.getLocationByCity(city);
-        return locationByCity
-                .map(LocationEntity::getId)
-                .orElse(0);
-    }
 }

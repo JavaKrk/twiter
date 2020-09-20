@@ -27,4 +27,12 @@ public class UserEntity {
 
     @OneToMany(mappedBy = "id")
     private Set<PostEntity> postEntities;
+
+    @ManyToOne
+    @JoinColumn(name = "location_id")
+    private LocationEntity locationEntity;
+
+    @ManyToOne
+    @JoinColumn(name = "role_id")
+    private RoleEntity roleEntity;
 }

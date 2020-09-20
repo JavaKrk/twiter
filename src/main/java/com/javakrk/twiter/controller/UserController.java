@@ -27,8 +27,8 @@ public class UserController {
     }
 
     @PostMapping("/adduser")
-    public String addNewUse(@ModelAttribute UserSecurityDto userSecurityDto, LocationDto locationDto) {
-        userService.addNewUser(userSecurityDto, locationDto);
+    public String addNewUse(@ModelAttribute UserSecurityDto userSecurityDto) {
+        userService.addNewUser(userSecurityDto);
         return "redirect:start";
     }
 
