@@ -25,7 +25,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         "/login",
                         "/newuser",
                         "/MainPage")
-                .hasAnyRole("USER", "ADMIN")
+                .hasAnyRole("user", "administrator")
                 .anyRequest().permitAll().and()
                 .csrf().disable()
                 .headers()
@@ -48,11 +48,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         authentication.inMemoryAuthentication()
                 .withUser("user")
                 .password(passwordEncoder.encode("pass"))
-                .roles("USER");
+                .roles("user");
 
         authentication.jdbcAuthentication()
-                .usersByUsernameQuery("select u.login, u.password, 1 from UserEntity u where u.login=?")
-                .authoritiesByUsernameQuery("select u login, 'ROLE_USER' from UserEntity u where u.login=?")
+                .usersByUsernameQuery("select users.login, users.password, 1 from users where users.login=?")
+                .authoritiesByUsernameQuery("select users.login, 'ROLE_USER' from users where users.login=?")
                 .dataSource(dataSource)
                 .passwordEncoder(passwordEncoder);
 
