@@ -14,7 +14,7 @@ public class LocationService {
 
     private final LocationRepository locationRepository;
 
-    public Optional<LocationEntity> getLocationEntityByCity(String city) {
-        return locationRepository.getLocationEntityByCity(city);
+    public Optional<LocationEntity> findLocationEntityByCity(String city) {
+        return locationRepository.findLocationEntityByCity(city);
     }
 }

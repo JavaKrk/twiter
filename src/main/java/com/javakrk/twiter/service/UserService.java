@@ -10,7 +10,6 @@ import org.modelmapper.ModelMapper;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @Service
@@ -26,31 +25,19 @@ public class UserService {
 
     public void addNewUser(UserSecurityDto userSecurityDto) {
 
-        Optional<LocationEntity> locationEntityByCity = locationService.getLocationEntityByCity(userSecurityDto.getCity());
+        UserEntity userEntity = modelMapper.map(userSecurityDto, UserEntity.class);
 
+        Optional<LocationEntity> locationEntityByCity = locationService.findLocationEntityByCity(userSecurityDto.getCity());
         if (locationEntityByCity.isPresent()) {
-            LocationEntity locationEntity = locationEntityByCity.get();
+            userEntity.setLocationEntity(locationEntityByCity.get());
         } else {
             LocationEntity locationEntity = modelMapper.map(userSecurityDto, LocationEntity.class);
             locationRepository.save(locationEntity);
+            userEntity.setLocationEntity(locationEntity);
         }
 
-        UserEntity userEntity = modelMapper.map(userSecurityDto, UserEntity.class);
-
-
-
-
-        userEntity.setLocationEntity(locationService.getLocationEntityByCity(userSecurityDto.getCity()).get());
-
-        try {
-
-            if (roleService.getRoleEntityByRole("user").isPresent()) {
-                userEntity.setRoleEntity(roleService.getRoleEntityByRole("user").get());
-            }
-
-            userEntity.setPassword(passwordEncoder.encode(userSecurityDto.getPassword()));
-            userRepository.save(userEntity);
-        } catch (NoSuchElementException ignored) {
-        }
+        userEntity.setRoleEntity(roleService.getRoleEntityByRole("user"));
+        userEntity.setPassword(passwordEncoder.encode(userSecurityDto.getPassword()));
+        userRepository.save(userEntity);
     }
 }

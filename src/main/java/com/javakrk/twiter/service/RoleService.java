@@ -13,7 +13,7 @@ public class RoleService {
 
     private final RoleRepository roleRepository;
 
-    public Optional<RoleEntity> getRoleEntityByRole(String role) {
+    public RoleEntity getRoleEntityByRole(String role) {
         return roleRepository.getRoleEntityByRole(role);
     }
 }
