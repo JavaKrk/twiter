@@ -13,11 +13,19 @@
 
 <img alt="Logo" src="../static/images/logo.png" th:src="@{/images/logo.png}" height="150px" width="150px"/>
 
-<div class="center">
+<div class="center_newuser">
 
     <h1>Create new account</h1>
 
     <form th:action="@{/adduser}" method="post" th:object="${newUser}">
+        <div>
+            <label for="login">Login:</label>
+            <input id="login" type="text" th:field="*{login}"/>
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input id="password" type="password" th:field="*{password}"/>
+        </div>
         <div>
             <label for="name">Name:</label>
             <input id="name" type="text" th:field="*{name}"/>
@@ -25,6 +33,10 @@
         <div>
             <label for="surname">Surname:</label>
             <input id="surname" type="text" th:field="*{surname}"/>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input id="email" type="email" th:field="*{email}"/>
         </div>
         <div>
             <label for="birth_date">Birth date:</label>
@@ -37,18 +49,6 @@
         <div>
             <label for="city">City:</label>
             <input id="city" type="text" th:field="*{city}"/>
-        </div>
-        <div>
-            <label for="login">Login:</label>
-            <input id="login" type="text" th:field="*{login}"/>
-        </div>
-        <div>
-            <label for="email">Email:</label>
-            <input id="email" type="email" th:field="*{email}"/>
-        </div>
-        <div>
-            <label for="password">Password:</label>
-            <input id="password" type="password" th:field="*{password}"/>
         </div>
 
         <button class="button" type="submit">Create new account</button>

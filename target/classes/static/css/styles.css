@@ -40,11 +40,25 @@ form div > label {
 
 form div > input {
     height: 20px;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
 }
 
 .center {
+    vertical-align: middle;
+    border-radius: 25px;
+    margin: auto;
+    width: 33%;
+    border: 3px solid #00BFFF;
+    padding: 10px;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.center_newuser {
     vertical-align: middle;
     border-radius: 25px;
     margin: auto;
@@ -71,10 +85,6 @@ form div > input {
 img {
     padding-bottom: 20px;
     display: block;
-}
-
-.center2 {
-    text-align: center;
 }
 
 .page {
