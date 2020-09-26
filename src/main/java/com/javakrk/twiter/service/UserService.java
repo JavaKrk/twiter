@@ -36,7 +36,7 @@ public class UserService {
             userEntity.setLocationEntity(locationEntity);
         }
 
-        userEntity.setRoleEntity(roleService.getRoleEntityByRole("user"));
+        userEntity.setRoleEntity(roleService.getRoleEntityByRole("ROLE_USER"));
         userEntity.setPassword(passwordEncoder.encode(userSecurityDto.getPassword()));
         userRepository.save(userEntity);
     }

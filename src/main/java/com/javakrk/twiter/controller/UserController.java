@@ -1,6 +1,5 @@
 package com.javakrk.twiter.controller;
 
-import com.javakrk.twiter.model.dto.LocationDto;
 import com.javakrk.twiter.model.dto.UserSecurityDto;
 import com.javakrk.twiter.service.UserService;
 import lombok.AllArgsConstructor;
