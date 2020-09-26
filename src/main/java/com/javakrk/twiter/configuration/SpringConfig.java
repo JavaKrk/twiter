@@ -58,8 +58,8 @@ public class SpringConfig {
         return new ModelMapper();
     }
 
-@Bean
-    public PasswordEncoder passwordEncoder(){
+    @Bean
+    public PasswordEncoder passwordEncoder() {
         return PasswordEncoderFactories.createDelegatingPasswordEncoder();
-}
+    }
 }

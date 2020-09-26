@@ -6,23 +6,25 @@
     <title>Welcome to Tweeter!</title>
     <link type="text/css"
           rel="stylesheet"
-          href="styles.css">
+          href="../static/css/styles.css" th:href="@{/css/styles.css}"/>
 </head>
 
 <body>
-<img src="https://toppng.com/uploads/preview/facebook-icon-twitter-icon-social-media-apps-logo-11562942329altfk7xuew.png"
-     alt="Logo" width="230" height="230">
+
+<img alt="Logo" src="../static/images/logoFull.png" th:src="@{/images/logoFull.png}"/>
 
 <div class="center">
     <form th:action="@{/login-process}" method="post">
-        <label for="inputLogin">Login:</label>
-        <input id="inputLogin" type="text"
-               th:required="required" name="login"/>
-
-        <label for="inputPassword">Password:</label>
-        <input id="inputPassword" type="password"
-               th:required="required" name="password"/>
-
+        <div>
+            <label for="inputLogin">Login:</label>
+            <input id="inputLogin" type="text"
+                   th:required="required" name="login"/>
+        </div>
+        <div>
+            <label for="inputPassword">Password:</label>
+            <input id="inputPassword" type="password"
+                   th:required="required" name="password"/>
+        </div>
         <button class="button" type="submit">Submit</button>
     </form>
 </div>

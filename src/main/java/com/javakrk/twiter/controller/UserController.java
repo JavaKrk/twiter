@@ -16,7 +16,7 @@ public class UserController {
 
     private final UserService userService;
 
-    @GetMapping("/start")
+    @GetMapping({"/", "/login"})
     public String getLoginView() {
         return "login";
     }
@@ -29,7 +29,7 @@ public class UserController {
     @PostMapping("/adduser")
     public String addNewUse(@ModelAttribute UserSecurityDto userSecurityDto) {
         userService.addNewUser(userSecurityDto);
-        return "redirect:start";
+        return "redirect:login";
     }
 
     @GetMapping("/passwordreset")
