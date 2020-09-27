@@ -11,7 +11,7 @@
 
 <body>
 
-<img alt="Logo" src="../static/images/logoFull.png" th:src="@{/images/logoFull.png}"/>
+<img style="margin-left: 37%" alt="Logo" src="../static/images/logoFull.png" th:src="@{/images/logoFull.png}"/>
 
 <div class="center">
     <form th:action="@{/login-process}" method="post">
@@ -29,12 +29,13 @@
     </form>
 </div>
 
+<br>
 <div>
-    <a href="http://localhost:8080/adduser">Create new account</a>
+    <a style="margin-left: 46%" class="button" href="http://localhost:8080/adduser">Create new account</a>
 </div>
-
+<br>
 <div>
-    <a href="http://localhost:8080/passwordreset">Forgot password?</a>
+    <a style="margin-left: 46.5%" class="button" href="http://localhost:8080/passwordreset">Forgot password?</a>
 </div>
 
 </body>

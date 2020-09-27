@@ -2,6 +2,10 @@ html{
     background-color: gray;
 }
 
+front {
+    margin: auto;
+}
+
 body {
     font-family: 'DejaVu Sans', Arial, Helvetica, serif;
     font-size: 14px;
@@ -23,7 +27,7 @@ form div {
 }
 
 form button.button {
-    margin-left: 60%;
+    margin-left: 40%;
 }
 
 form div > label {
@@ -49,10 +53,9 @@ h1 {
 }
 
 .center {
-    vertical-align: middle;
     border-radius: 25px;
     margin: auto;
-    width: 33%;
+    width: 20%;
     border: 3px solid #00BFFF;
     padding: 10px;
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -73,13 +76,11 @@ h1 {
     border: none;
     color: white;
     padding: 5px 15px;
-    text-align: center;
     text-decoration: none;
-    display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
     cursor: pointer;
     background-color: #008CBA;
+
 }
 
 img {
