@@ -1,6 +1,7 @@
 package com.javakrk.twiter.repository;
 
 import com.javakrk.twiter.model.dao.LocationEntity;
+import com.javakrk.twiter.model.dao.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -10,4 +11,6 @@ import java.util.Optional;
 public interface LocationRepository extends JpaRepository<LocationEntity, Integer> {
 
     Optional<LocationEntity> findLocationEntityByCity(String city);
+
+    LocationEntity getLocationEntityByUserEntities(UserEntity userEntities);
 }

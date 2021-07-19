@@ -17,7 +17,7 @@ public class PostEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     private String text;
     private Date date;
 

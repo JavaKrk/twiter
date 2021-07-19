@@ -11,14 +11,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @AllArgsConstructor
-public class UserController {
+public class AddUserController {
 
     private final UserService userService;
-
-    @GetMapping({"/", "/login"})
-    public String getLoginView() {
-        return "login";
-    }
 
     @GetMapping("/adduser")
     public ModelAndView getAddUserView() {
@@ -29,10 +24,5 @@ public class UserController {
     public String addNewUse(@ModelAttribute UserSecurityDto userSecurityDto) {
         userService.addNewUser(userSecurityDto);
         return "redirect:login";
-    }
-
-    @GetMapping("/passwordreset")
-    public String passwordResetUserView() {
-        return "passwordreset";
     }
 }

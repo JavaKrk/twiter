@@ -7,6 +7,7 @@ import com.javakrk.twiter.repository.LocationRepository;
 import com.javakrk.twiter.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -39,5 +40,9 @@ public class UserService {
         userEntity.setRoleEntity(roleService.getRoleEntityByRole("ROLE_USER"));
         userEntity.setPassword(passwordEncoder.encode(userSecurityDto.getPassword()));
         userRepository.save(userEntity);
+    }
+
+    public String getLoginLoggedUser() {
+        return SecurityContextHolder.getContext().getAuthentication().getName();
     }
 }

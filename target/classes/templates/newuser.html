@@ -11,9 +11,9 @@
 
 <body>
 
-<img alt="Logo" src="../static/images/logoFull.png" th:src="@{/images/logoFull.png}"/>
+<img style="margin-left: 37%" alt="Logo" src="../static/images/logoFull.png" th:src="@{/images/logoFull.png}"/>
 
-<div class="center_newuser">
+<div class="center">
 
     <h1>Create new account</h1>
 
@@ -51,7 +51,10 @@
             <input id="city" type="text" th:field="*{city}"/>
         </div>
 
-        <button class="button" type="submit">Create new account</button>
+        <button style="margin-left: 30%" class="button" type="submit">Create new account</button>
+        <br>
+        <br>
+        <a style="margin-left: 40%" class="button" href="http://localhost:8080/login">Go Back</a>
 
     </form>
 </div>

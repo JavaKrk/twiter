@@ -1,0 +1,54 @@
+@import "styles.css";
+
+img {
+    height: 50px;
+    width: 200px;
+    padding-bottom: 20px;
+}
+
+div {
+    float: left;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    line-height: 30px;
+}
+
+h3 {
+    padding-left: 25px;
+}
+
+div.find {
+    display: block;
+    text-align: right;
+    margin-right: 25px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+div.find > label {
+    width: 100px;
+    font-size: 16px;
+    float: left;
+    margin-right: 5px;
+}
+
+div.find > input {
+    width: 200px;
+    height: 20px;
+    padding: 0;
+}
+
+table.userFind {
+    background-color: lightslategrey;
+    width: 85%;
+    margin-top: 25px;
+}
+
+th.th_email, td.th_email {
+    width: 50px;
+}
+
+button.button_edit {
+    font-size: 14px;
+    height: 24px;
+}

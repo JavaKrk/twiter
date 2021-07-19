@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{management.userManagement}">Tweetyer - User management</title>
+    <link rel="stylesheet"
+          type="text/css"
+          href="../static/css/management.css"
+          th:href="@{/css/management.css}"/>
+</head>
+
+<body>
+
+<div>
+    <img src="../static/images/logoFull.png" th:src="@{/images/logoFull.png}" alt="Logo"/>
+</div>
+
+<fieldset>
+    <legend th:text="#{management.field.users}">Users</legend>
+
+    <fieldset>
+        <legend th:text="#{management.field2.findUser}">Find user</legend>
+
+        <form>
+            <h3 th:text="#{management.field2.findBy}">Find by:</h3>
+            <div th:object="${findUser}">
+                <div class="find">
+                    <label for="login" th:text="#{message.login}">Login:</label>
+                    <input id="login" type="text" th:field="*{login}"/>
+                </div>
+                <div class="find">
+                    <label for="name" th:text="#{message.name}">Name:</label>
+                    <input id="name" type="text" th:field="*{name}"/>
+                </div>
+                <div class="find">
+                    <label for="surname" th:text="#{message.surname}">Surname:</label>
+                    <input id="surname" type="text" th:field="*{surname}"/>
+                </div>
+                <div>
+                    <button type="submit" th:text="#{button.find}">Find</button>
+                </div>
+            </div>
+            <table class="userFind">
+                <thead>
+                <tr>
+                    <th th:text="#{message.login}">Login</th>
+                    <th th:text="#{message.name}">Name</th>
+                    <th th:text="#{message.surname}">Surname</th>
+                    <th class="th_email" th:text="#{message.email}">Email</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody th:remove="all-but-first">
+                <tr th:each="user : ${getUsers}">
+                    <td th:text="${user.login}">John</td>
+                    <td th:text="${user.getName()}">Jan</td>
+                    <td th:text="${user.surname}">Kowalski</td>
+                    <td th:text="${user.email}">john@gmail.com</td>
+                    <td>
+                        <button type="submit" class="button_edit" th:text="#{button.edit}">Edit</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </form>
+    </fieldset>
+</fieldset>
+
+<div>
+    <p th:text="${userLogin}"></p>
+</div>
+
+</body>
+
+</html>

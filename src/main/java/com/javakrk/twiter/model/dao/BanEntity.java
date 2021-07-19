@@ -16,7 +16,7 @@ public class BanEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     @Column(name = "end_time")
     private Date endTime;
 
