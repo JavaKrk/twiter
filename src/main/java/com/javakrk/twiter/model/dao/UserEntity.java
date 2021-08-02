@@ -2,6 +2,7 @@ package com.javakrk.twiter.model.dao;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -25,9 +26,6 @@ public class UserEntity {
     @Column(name = "birth_date")
     private String birthDate;
 
-    @OneToMany(mappedBy = "id")
-    private Set<PostEntity> postEntities;
-
     @ManyToOne
     @JoinColumn(name = "location_id")
     private LocationEntity locationEntity;
@@ -35,4 +33,10 @@ public class UserEntity {
     @ManyToOne
     @JoinColumn(name = "role_id")
     private RoleEntity roleEntity;
+
+    @OneToMany(mappedBy = "id")
+    private Set<PostEntity> postEntities;
+
+    @OneToMany(mappedBy = "id")
+    private Set<CommentEntity> commentEntities;
 }

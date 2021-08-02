@@ -1,6 +1,6 @@
 @import "styles.css";
 
-img {
+img.logo {
     height: 50px;
     width: 200px;
     padding-bottom: 20px;

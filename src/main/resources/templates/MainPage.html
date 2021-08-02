@@ -2,19 +2,24 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link type="text/css"
-          rel="stylesheet"
-          href="../static/css/styles.css" th:href="@{/css/styles.css}"/>
-
-
+    <title th:text="#{mainpage.title}">Tweetyer</title>
+    <link rel="stylesheet"
+          type="text/css"
+          href="../static/css/mainpage.css"
+          th:href="@{/css/mainpage.css}"/>
 </head>
+
 <body>
+<div>
+    <img class="logo" src="../static/images/logoFull.png" th:src="@{/images/logoFull.png}" alt="Logo"/>
+</div>
+
+
+
+
+
 
 <div class="page">
-    <a name="top"></a>
-    <div class="title">Welcome at Twiter</div>
-
     <div class="left">
         <div><p>Hi</p><p th:text="${name}"></p></div>
         <p>

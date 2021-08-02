@@ -21,5 +21,6 @@ public class BanEntity {
     private Date endTime;
 
     @OneToOne
+    @JoinColumn(name = "user_id")
     private UserEntity userEntity;
 }

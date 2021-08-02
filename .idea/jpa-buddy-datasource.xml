@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JpbDataSourceConfig">
+    <data-sources>
+      <data-source id="ff5b55f0-a9a8-4261-9b7d-a82c8925c14d" name="twiter" url="jdbc:mysql://tweter?serverTimezone=Europe/Warsaw" driverClass="com.mysql.cj.jdbc.Driver" />
+    </data-sources>
+  </component>
+</project>

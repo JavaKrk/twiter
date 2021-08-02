@@ -1,0 +1,14 @@
+@import "styles.css";
+
+img.logo {
+    height: 50px;
+    width: 200px;
+    padding-bottom: 20px;
+}
+
+div {
+    float: left;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    line-height: 30px;
+}

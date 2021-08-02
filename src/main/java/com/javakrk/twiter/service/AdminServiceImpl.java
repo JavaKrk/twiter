@@ -4,7 +4,6 @@ import com.javakrk.twiter.model.dao.BanEntity;
 import com.javakrk.twiter.model.dao.LocationEntity;
 import com.javakrk.twiter.model.dao.RoleEntity;
 import com.javakrk.twiter.model.dao.UserEntity;
-import com.javakrk.twiter.model.dto.UserDataDto;
 import com.javakrk.twiter.model.dto.UserFindDto;
 import com.javakrk.twiter.repository.BanRepository;
 import com.javakrk.twiter.repository.LocationRepository;
@@ -35,16 +34,42 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public UserDataDto getUserDataById(Integer id) {
-        Optional<UserEntity> userEntity = userRepository.findById(id);
-        if (userEntity.isPresent()) {
-            BanEntity banEntity = banRepository.getBanEntityByUserEntity(userEntity.get());
-            LocationEntity locationEntity = locationRepository.getLocationEntityByUserEntities(userEntity.get());
-            RoleEntity roleEntity = roleRepository.getRoleEntityByUserEntities(userEntity.get());
+    public UserEntity getUserEntityById(Integer id) {
+        Optional<UserEntity> findUserById = userRepository.findById(id);
+        if (findUserById.isPresent()) {
+            return findUserById.get();
         } else {
-            throw new RuntimeException("User nto found for");
+            throw new RuntimeException("User not found.");
         }
-        UserDataDto userDataDto = null;
-        return ;
+    }
+
+    @Override
+    public BanEntity getBanEntityById(Integer id) {
+        Optional<BanEntity> findBanById = banRepository.findById(id);
+        if (findBanById.isPresent()) {
+            return findBanById.get();
+        } else {
+            throw new RuntimeException("Ban not found.");
+        }
+    }
+
+    @Override
+    public LocationEntity getLocationEntityById(Integer id) {
+        Optional<LocationEntity> findLocationById = locationRepository.findById(id);
+        if (findLocationById.isPresent()) {
+            return findLocationById.get();
+        } else {
+            throw new RuntimeException("Location not found.");
+        }
+    }
+
+    @Override
+    public RoleEntity getRoleEntityById(Integer id) {
+        Optional<RoleEntity> findRoleById = roleRepository.findById(id);
+        if (findRoleById.isPresent()) {
+            return findRoleById.get();
+        } else {
+            throw new RuntimeException("Role not found.");
+        }
     }
 }

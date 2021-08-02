@@ -21,8 +21,10 @@ public class CommentEntity {
     private String text;
 
     @ManyToOne
+    @JoinColumn(name = "user_id")
     private UserEntity userEntity;
 
     @ManyToOne
+    @JoinColumn(name = "post_id")
     private PostEntity postEntity;
 }

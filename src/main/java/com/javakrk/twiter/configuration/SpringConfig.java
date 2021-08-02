@@ -24,11 +24,11 @@ public class SpringConfig {
 
     @Bean
     public DataSource getDataSource() {
-        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        var dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://remotemysql.com:3306/1GkcyPqRT3?serverTimezone=Europe/Warsaw");
-        dataSource.setUsername("1GkcyPqRT3");
-        dataSource.setPassword("eMgIHQVhsG");
+        dataSource.setUrl("jdbc:mysql://127.0.0.1:3306/tweter?serverTimezone=Europe/Warsaw");
+        dataSource.setUsername("root");
+        dataSource.setPassword("qwASzx12");
         return dataSource;
     }
 

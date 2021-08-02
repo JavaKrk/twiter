@@ -22,6 +22,7 @@ public class PostEntity {
     private Date date;
 
     @ManyToOne
+    @JoinColumn(name = "user_id")
     private UserEntity userEntity;
 
     @OneToMany(mappedBy = "id")
